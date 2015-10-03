@@ -4,7 +4,7 @@
 */
 
 //define token
-define("TOKEN", "xg2m5ZHucD8r_7UiGPXdN3Jxxii6IqwZDY1YCb9SU7oXUAFTrTN5nb8Krkt9rQ7or7CRtMXf9mQINbr59AKClm5zNbZIlq7308wnEmjsb-I");
+define("TOKEN", "398385690");
 
 class Api extends MY_Controller {
 	public function __construct() {
