@@ -21,10 +21,20 @@ class Api extends MY_Controller {
 
 	public function receive_wx_msg() {
 		if (isset($_GET['echostr'])) {
+			$this->traceHttp();
 			$this->valid();
 		}else{
 			$this->responseMsg();
 		}
+	}
+
+	private function traceHttp(){
+		$this->logger("REMOTE_ADDR:".$_SERVER["REMOTE_ADDR"].((strpos($_SERVER["REMOTE_ADDR"], "101.226"))?" From Weixin":" Unknown IP"));
+		$this->logger("QUERY_STRING:".$_SERVER["QUERY_STRING"]);
+	}
+
+	private function logger($content){
+		file_put_contents("log.html", date('Y-m-d H:i:s ').$contentStr."<br>", FILE_APPEND);
 	}
 
 	public function valid() {
