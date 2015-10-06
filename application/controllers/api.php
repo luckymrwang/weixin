@@ -33,7 +33,7 @@ class Api extends MY_Controller {
 		$this->logger("QUERY_STRING:".$_SERVER["QUERY_STRING"]);
 	}
 
-	private function logger($content){
+	private function logger($contentStr){
 		file_put_contents("log.html", date('Y-m-d H:i:s ').$contentStr."<br>", FILE_APPEND);
 	}
 
